@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="so"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TIIGSI Admin Dashboard</title><link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="download3.png"></head>
+<body>
+<div id="loginBox" class="login-box"><div class="brand center"><img src="../shared/tiigsi-logo.png"></div><h2>Admin Login</h2><p>Maamulka ka gal si aad u maamusho diiwaangelinta.</p><input id="adminUser" placeholder="Username" value="admin"><input id="adminPass" type="password" placeholder="Password"><button class="btn" onclick="login()">Gal Dashboard</button><div id="loginError" class="error"></div><small></small></div>
+<div id="dashboard" class="hidden"><header class="topbar"><div class="container nav"><div class="brand"><img src="../shared/tiigsi-logo.png"><div><b>ADMIN DASHBOARD</b><small>Diiwaangelinta Ardayda</small></div></div><button class="btn btn-small" onclick="logout()">Ka bax</button></div></header>
+<div class="container dashboard"><div class="dash-head"><div><span class="eyebrow">ADMIN</span><h1>Maamulka Ardayda</h1></div><button class="btn ghost" onclick="exportCSV()">⬇ Export CSV</button></div>
+<div class="stat-grid">
+  <div class="stat"><span>👥</span><b id="total">0</b><small>Dhammaan Ardayda</small></div>
+  <div class="stat"><span>📅</span><b id="dateCount">0</b><small>Date &amp; Time leh</small></div>
+  <div class="stat"><span>💬</span><b id="messageCount">0</b><small>Fariimo</small></div>
+  <div class="stat"><span>📚</span><b id="courseCount">0</b><small>Koorsooyin</small></div>
+</div>
+<div class="toolbar"><input id="search" placeholder="🔎 Raadi magaca, phone, ID ama course..." oninput="renderTable()"><select id="filter" onchange="renderTable()"><option value="">Koorsooyinka oo dhan</option></select></div>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>Student ID</th><th>Magac</th><th>Phone</th><th>Course</th><th>Date &amp; Time</th><th>Fariin</th><th>Action</th></tr></thead><tbody id="tbody"></tbody></table></div></div></div>
+<script src="../shared/common.js"></script><script src="script.js"></script></body></html>
